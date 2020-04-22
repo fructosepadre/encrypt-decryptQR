@@ -87,15 +87,7 @@ public class EncryptionService implements EncryptionInterface {
 
     @Override
     public String encryptQRCodeString(String plaintext){
-        List<String> PT=Arrays.asList(plaintext.split("\\|"));
-        String facultyID=encryptor(PT.get(0));
-        String subjectCode=encryptor(PT.get(1));
-        String date=encryptor(PT.get(2));
-        String time=encryptor(PT.get(3));
-
-        String cipherText=facultyID+"|"+subjectCode+"|"+date+"|"+time;
-
-        return cipherText;
+        return encryptor(plaintext);
     }
 
 }

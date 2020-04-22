@@ -88,15 +88,6 @@ catch (IndexOutOfBoundsException e)
 
     @Override
     public String decryptQRCodeString(String ciphertext) {
-
-        List<String> PT= Arrays.asList(ciphertext.split("\\|"));
-        String facultyID= decryptor(PT.get(0)).trim();
-        String subjectCode=decryptor(PT.get(1)).trim();
-        String date=decryptor(PT.get(2)).trim();
-        String time=decryptor(PT.get(3)).trim();
-
-        String plainText=facultyID+"|"+subjectCode+"|"+date+"|"+time;
-
-        return plainText;
+        return decryptor(ciphertext);
     }
 }
