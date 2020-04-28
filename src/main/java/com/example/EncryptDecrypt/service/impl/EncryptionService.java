@@ -86,8 +86,6 @@ public class EncryptionService implements EncryptionInterface {
     }
 
     @Override
-    public String encryptQRCodeString(String plaintext){
-        return encryptor(plaintext);
-    }
+    public String encryptQRCodeString(String plaintext){ return encryptor(plaintext);}
 
 }
