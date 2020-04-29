@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin("*")
-@RequestMapping(value = "/api/secureQR")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@RequestMapping(value = "/75percent/secureQR")
 public class SecureQR {
 
     @Autowired
@@ -17,7 +17,7 @@ public class SecureQR {
     @Autowired
     private EncryptionService encryptionService;
 
-    @GetMapping(value = "/encryption/{plaintext}")
+    @PostMapping(value = "/encryption/{plaintext}")
     public String encryption(@PathVariable("plaintext") String plaintext) {
         String ciphertext=encryptionService.encryptQRCodeString(plaintext);
         return ciphertext;
